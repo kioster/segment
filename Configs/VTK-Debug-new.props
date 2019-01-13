@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <VTK_ADD_BIN>$(SolutionDir)Lib\VTK\bin</VTK_ADD_BIN>
+    <VTK_ADD_SOURCE>$(SolutionDir)Lib\VTK\source</VTK_ADD_SOURCE>
+    <VTK_VERSION>8.1</VTK_VERSION>
+    <VTK_INCLUDE>$(VTK_ADD_BIN)\include\vtk-$(VTK_VERSION)</VTK_INCLUDE>
+    <VTK_LIB>$(VTK_ADD_BIN)\lib</VTK_LIB>
+    <VTK_DLL>$(VTK_ADD_BIN)\bin</VTK_DLL>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LibraryWPath>$(WindowsSDK_MetadataPath)</LibraryWPath>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(VTK_INCLUDE);$(VTK_INCLUDE)\alglib;$(VTK_INCLUDE)\vtkexpat;$(VTK_INCLUDE)\vtkfreetype;$(VTK_INCLUDE)\vtkgl2ps;$(VTK_INCLUDE)\vtkglew;$(VTK_INCLUDE)\vtkhdf5;$(VTK_INCLUDE)\vtkjpeg;$(VTK_INCLUDE)\vtkjsoncpp;$(VTK_INCLUDE)\vtkkwiml;$(VTK_INCLUDE)\vtklibharu;$(VTK_INCLUDE)\vtklibxml2;$(VTK_INCLUDE)\vtklz4;$(VTK_INCLUDE)\vtkmetaio;$(VTK_INCLUDE)\vtknetcdf;$(VTK_INCLUDE)\vtknetcdfcpp;$(VTK_INCLUDE)\vtkoggtheora;$(VTK_INCLUDE)\vtkpng;$(VTK_INCLUDE)\vtksqlite;$(VTK_INCLUDE)\vtksys;$(VTK_INCLUDE)\vtktiff;$(VTK_INCLUDE)\vtkverdict;$(VTK_INCLUDE)\vtkzlib;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;vtkRenderingCore_INCLUDE="$(VTK_INCLUDE)\vtkRenderingCoreModule.h";CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(VTK_LIB)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(VTK_LIB)\vtkalglib-8.1.lib;$(VTK_LIB)\vtkChartsCore-8.1.lib;$(VTK_LIB)\vtkCommonColor-8.1.lib;$(VTK_LIB)\vtkCommonComputationalGeometry-8.1.lib;$(VTK_LIB)\vtkCommonCore-8.1.lib;$(VTK_LIB)\vtkCommonDataModel-8.1.lib;$(VTK_LIB)\vtkCommonExecutionModel-8.1.lib;$(VTK_LIB)\vtkCommonMath-8.1.lib;$(VTK_LIB)\vtkCommonMisc-8.1.lib;$(VTK_LIB)\vtkCommonSystem-8.1.lib;$(VTK_LIB)\vtkCommonTransforms-8.1.lib;$(VTK_LIB)\vtkDICOMParser-8.1.lib;$(VTK_LIB)\vtkDomainsChemistry-8.1.lib;$(VTK_LIB)\vtkDomainsChemistryOpenGL2-8.1.lib;$(VTK_LIB)\vtkexoIIc-8.1.lib;$(VTK_LIB)\vtkexpat-8.1.lib;$(VTK_LIB)\vtkFiltersAMR-8.1.lib;$(VTK_LIB)\vtkFiltersCore-8.1.lib;$(VTK_LIB)\vtkFiltersExtraction-8.1.lib;$(VTK_LIB)\vtkFiltersFlowPaths-8.1.lib;$(VTK_LIB)\vtkFiltersGeneral-8.1.lib;$(VTK_LIB)\vtkFiltersGeneric-8.1.lib;$(VTK_LIB)\vtkFiltersGeometry-8.1.lib;$(VTK_LIB)\vtkFiltersHybrid-8.1.lib;$(VTK_LIB)\vtkFiltersHyperTree-8.1.lib;$(VTK_LIB)\vtkFiltersImaging-8.1.lib;$(VTK_LIB)\vtkFiltersModeling-8.1.lib;$(VTK_LIB)\vtkFiltersParallel-8.1.lib;$(VTK_LIB)\vtkFiltersParallelImaging-8.1.lib;$(VTK_LIB)\vtkFiltersPoints-8.1.lib;$(VTK_LIB)\vtkFiltersProgrammable-8.1.lib;$(VTK_LIB)\vtkFiltersSelection-8.1.lib;$(VTK_LIB)\vtkFiltersSMP-8.1.lib;$(VTK_LIB)\vtkFiltersSources-8.1.lib;$(VTK_LIB)\vtkFiltersStatistics-8.1.lib;$(VTK_LIB)\vtkFiltersTexture-8.1.lib;$(VTK_LIB)\vtkFiltersTopology-8.1.lib;$(VTK_LIB)\vtkFiltersVerdict-8.1.lib;$(VTK_LIB)\vtkfreetype-8.1.lib;$(VTK_LIB)\vtkGeovisCore-8.1.lib;$(VTK_LIB)\vtkgl2ps-8.1.lib;$(VTK_LIB)\vtkglew-8.1.lib;$(VTK_LIB)\vtkhdf5_hl-8.1.lib;$(VTK_LIB)\vtkhdf5-8.1.lib;$(VTK_LIB)\vtkImagingColor-8.1.lib;$(VTK_LIB)\vtkImagingCore-8.1.lib;$(VTK_LIB)\vtkImagingFourier-8.1.lib;$(VTK_LIB)\vtkImagingGeneral-8.1.lib;$(VTK_LIB)\vtkImagingHybrid-8.1.lib;$(VTK_LIB)\vtkImagingMath-8.1.lib;$(VTK_LIB)\vtkImagingMorphological-8.1.lib;$(VTK_LIB)\vtkImagingSources-8.1.lib;$(VTK_LIB)\vtkImagingStatistics-8.1.lib;$(VTK_LIB)\vtkImagingStencil-8.1.lib;$(VTK_LIB)\vtkInfovisCore-8.1.lib;$(VTK_LIB)\vtkInfovisLayout-8.1.lib;$(VTK_LIB)\vtkInteractionImage-8.1.lib;$(VTK_LIB)\vtkInteractionStyle-8.1.lib;$(VTK_LIB)\vtkInteractionWidgets-8.1.lib;$(VTK_LIB)\vtkIOAMR-8.1.lib;$(VTK_LIB)\vtkIOCore-8.1.lib;$(VTK_LIB)\vtkIOEnSight-8.1.lib;$(VTK_LIB)\vtkIOExodus-8.1.lib;$(VTK_LIB)\vtkIOExport-8.1.lib;$(VTK_LIB)\vtkIOExportOpenGL2-8.1.lib;$(VTK_LIB)\vtkIOGeometry-8.1.lib;$(VTK_LIB)\vtkIOImage-8.1.lib;$(VTK_LIB)\vtkIOImport-8.1.lib;$(VTK_LIB)\vtkIOInfovis-8.1.lib;$(VTK_LIB)\vtkIOLegacy-8.1.lib;$(VTK_LIB)\vtkIOLSDyna-8.1.lib;$(VTK_LIB)\vtkIOMINC-8.1.lib;$(VTK_LIB)\vtkIOMovie-8.1.lib;$(VTK_LIB)\vtkIONetCDF-8.1.lib;$(VTK_LIB)\vtkIOParallel-8.1.lib;$(VTK_LIB)\vtkIOParallelXML-8.1.lib;$(VTK_LIB)\vtkIOPLY-8.1.lib;$(VTK_LIB)\vtkIOSQL-8.1.lib;$(VTK_LIB)\vtkIOTecplotTable-8.1.lib;$(VTK_LIB)\vtkIOVideo-8.1.lib;$(VTK_LIB)\vtkIOXML-8.1.lib;$(VTK_LIB)\vtkIOXMLParser-8.1.lib;$(VTK_LIB)\vtkjpeg-8.1.lib;$(VTK_LIB)\vtkjsoncpp-8.1.lib;$(VTK_LIB)\vtklibharu-8.1.lib;$(VTK_LIB)\vtklibxml2-8.1.lib;$(VTK_LIB)\vtklz4-8.1.lib;$(VTK_LIB)\vtkmetaio-8.1.lib;$(VTK_LIB)\vtkNetCDF-8.1.lib;$(VTK_LIB)\vtknetcdfcpp-8.1.lib;$(VTK_LIB)\vtkoggtheora-8.1.lib;$(VTK_LIB)\vtkParallelCore-8.1.lib;$(VTK_LIB)\vtkpng-8.1.lib;$(VTK_LIB)\vtkproj4-8.1.lib;$(VTK_LIB)\vtkRenderingAnnotation-8.1.lib;$(VTK_LIB)\vtkRenderingContext2D-8.1.lib;$(VTK_LIB)\vtkRenderingContextOpenGL2-8.1.lib;$(VTK_LIB)\vtkRenderingCore-8.1.lib;$(VTK_LIB)\vtkRenderingFreeType-8.1.lib;$(VTK_LIB)\vtkRenderingGL2PSOpenGL2-8.1.lib;$(VTK_LIB)\vtkRenderingImage-8.1.lib;$(VTK_LIB)\vtkRenderingLabel-8.1.lib;$(VTK_LIB)\vtkRenderingLOD-8.1.lib;$(VTK_LIB)\vtkRenderingOpenGL2-8.1.lib;$(VTK_LIB)\vtkRenderingVolume-8.1.lib;$(VTK_LIB)\vtkRenderingVolumeOpenGL2-8.1.lib;$(VTK_LIB)\vtksqlite-8.1.lib;$(VTK_LIB)\vtksys-8.1.lib;$(VTK_LIB)\vtktiff-8.1.lib;$(VTK_LIB)\vtkverdict-8.1.lib;$(VTK_LIB)\vtkViewsContext2D-8.1.lib;$(VTK_LIB)\vtkViewsCore-8.1.lib;$(VTK_LIB)\vtkViewsInfovis-8.1.lib;$(VTK_LIB)\vtkzlib-8.1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="VTK_ADD_BIN">
+      <Value>$(VTK_ADD_BIN)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VTK_ADD_SOURCE">
+      <Value>$(VTK_ADD_SOURCE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VTK_VERSION">
+      <Value>$(VTK_VERSION)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VTK_INCLUDE">
+      <Value>$(VTK_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VTK_LIB">
+      <Value>$(VTK_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VTK_DLL">
+      <Value>$(VTK_DLL)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
